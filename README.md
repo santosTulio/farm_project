@@ -7,8 +7,6 @@ If you are interested in applying for a position, first download the project and
 - If you are applying for a **Back-end** developer position (**Analista Desenvolvedor Back-End**), the same ideia applies. You can focus on the back, but it will be OK if you try completing the front-end.
 - If you have arrived here because of a position published only as **developer** (**Analista Desenvolvedor**), them we spect you do develop both the back-end and the front-end of this project.
 
-Once you are ready to submit your project, please send the repository link through your preferred **Git system** (e.g. GitHub, GitLab, BitBucket etc.) to e-mail _**agrosatelite@agrosatelite.com.br**_, or according HR instructions.
-
 - **Fill the subject as** (depending on how which position you are applying for):
   - Frontend Dev.;
   - Backend Dev.;
