@@ -8,17 +8,10 @@ from farm_base.models import Farm
 
 
 class FarmListSerializer(serializers.ModelSerializer):
-    def __init__(self, *args, **kwargs):
-        super(FarmListSerializer, self).__init__(*args, **kwargs)
-        request = kwargs['context']['request']
-        include_geometry = request.GET.get('include_geometry', "false")
-
-        if include_geometry.lower() == "true":
-            self.fields['geometry'] = GeometryField(read_only=True)
 
     class Meta:
         model = Farm
-        fields = ['id', 'name', 'centroid', 'area']
+        fields = ['id', 'owner_id', 'name', 'centroid', 'area', 'municipality','state']
         read_only_fields = ['id', 'centroid', 'area']
 
 
@@ -32,7 +25,7 @@ class FarmCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Farm
-        fields = ['id', 'name', 'geometry', 'centroid', 'area']
+        fields = ['id', 'name', 'geometry', 'centroid', 'area', 'municipality', 'state']
         read_only_fields = ['id', 'centroid', 'area']
 
 
