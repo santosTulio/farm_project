@@ -1,0 +1,30 @@
+.farm-detail{
+    padding: 0.5rem;
+}
+
+.farm-detail-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.farm-detail-info :disabled{
+    color: #000000;
+    font-weight: 400;
+}
+
+.coordinate-content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.coordinate-content .coordinate-field{
+    width: 100%;
+}
+
+.farm-detail-btns{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

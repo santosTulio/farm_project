@@ -1,0 +1,18 @@
+.farm-edit-info{
+    display: flex;
+    flex-direction: column;
+}
+.coordinate-content{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.coordinate-content .coordinate-field{
+    width: 100%;
+}
+.farm-edit-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}

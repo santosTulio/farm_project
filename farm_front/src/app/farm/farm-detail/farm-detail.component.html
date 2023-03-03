@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-card-header><h3>Detalhe da Fazenda</h3></mat-card-header>
+    <mat-card-content>
+        <div class="farm-detail">
+            <div class="farm-detail-info">
+                <label>Nome</label>
+                <mat-form-field appearance="outline">
+                    <input matInput [value]="farm.name" [placeholder]="!farm ? 'Carregando ...': 'Sem informação'" disabled/>
+                </mat-form-field>
+            </div>
+            <div class="farm-detail-info">
+                <label>Proprietario</label>
+                <mat-form-field appearance="outline">
+                    <input matInput [value]="farm.owner_id" [placeholder]="!farm ? 'Carregando ...': 'Sem informação'" disabled/>
+                </mat-form-field>
+            </div>
+            <div class="farm-detail-info">
+                <label>Area</label>
+                <mat-form-field appearance="outline">
+                    <input matInput [value]="farm.area" [placeholder]="!farm ? 'Carregando ...': 'Sem informação'" disabled/>
+                </mat-form-field>
+            </div>
+            <div class="farm-detail-info">
+                <label>Centroide</label>
+                <div class="coordinate-content">
+                    <mat-form-field class="coordinate-field" appearance="outline">
+                        <mat-label>Latitude</mat-label>
+                        <input matInput [value]="farm.centroid[0]" [placeholder]="!farm ? 'Carregando ...': 'Sem informação'" disabled/>
+                    </mat-form-field>
+                    <mat-form-field class="coordinate-field" appearance="outline">
+                        <mat-label>Longitude</mat-label>
+                        <input matInput [value]="farm.centroid[1]" [placeholder]="!farm ? 'Carregando ...': 'Sem informação'" disabled/>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="farm-detail-info">
+                <app-basemap #map></app-basemap>
+            </div>
+            <div class="farm-detail-btns">
+                <a [routerLink]="['/edit',farm.id]" color="primary" mat-stroked-button>
+                    <mat-icon>edit</mat-icon>
+                    Editar
+                </a>
+                <button type="button" (click)="deleteHandler()" color="warn" mat-stroked-button>
+                    <mat-icon>close</mat-icon>
+                    Deletar
+                </button>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,49 @@
+<mat-card>
+    <mat-card-header><h3>{{ farm && farm.id ? 'Editar Fazenda':'Nova Fazenda'}}</h3></mat-card-header>
+    <mat-card-content>
+        <form>
+            <div class="farm-edit-info">
+                <label>Nome *</label>
+                <mat-form-field appearance="outline">
+                    <input matInput [formControl]="nameFormControl" placeholder="Informe o nome da Fazenda"/>
+                </mat-form-field>
+            </div>
+    
+            <div class="farm-edit-info">
+                <label>Dono*</label>
+                <mat-form-field appearance="outline">
+                    <input matInput type="number" [formControl]="ownerFormControl" placeholder="Informe o id do dono da Fazenda"/>
+                </mat-form-field>
+            </div>
+            <div class="farm-edit-info">
+                <label>Area*</label>
+                <mat-form-field appearance="outline">
+                    <input matInput type="number" [formControl]="areaFormControl" placeholder="Informe a area da Fazenda" />
+                </mat-form-field>
+            </div>
+            <div class="farm-detail-info">
+                <label>Centroide*</label>
+                <div class="coordinate-content">
+                    <mat-form-field class="coordinate-field" appearance="outline">
+                        <mat-label>Latitude</mat-label>
+                        <input matInput type="number" [formControl]="centroidLatFormControl" placeholder="Latitude do centroide da Fazenda"/>
+                    </mat-form-field>
+                    <mat-form-field class="coordinate-field" appearance="outline">
+                        <mat-label>Longitude</mat-label>
+                        <input matInput type="number" [formControl]="centroidLngFormControl" placeholder="Longitude do centroide da Fazenda"/>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="farm-edit-btns">
+                <button type="button" (click)="saveHandler()" color="primary" mat-raised-button>
+                    <mat-icon>save</mat-icon>
+                    Salvar
+                </button>
+                <button type="button" (click)="cancelHandler()" color="warn" mat-raised-button>
+                    <mat-icon>close</mat-icon>
+                    Cancelar
+                </button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,7 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Farm } from '../models/Farm';
+import { FarmService } from '../services/farm.service';
 
 @Component({
-  selector: 'app-dashboard',
-  template: `<p routerLink="farm">Cadastrar</p>`,
+  selector: 'app-dashboard',  
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {}
+export class DashboardComponent implements OnInit {
+  displayedColumns: string[] = ['name'];
+  gridData: Farm[] = [];
+
+  constructor(
+    private _farmService: FarmService
+  ){}
+
+  ngOnInit(): void {
+    this._farmService.list().subscribe( farms => this.gridData = farms);
+  }
+}

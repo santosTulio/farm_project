@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-header><h3>Fazendas</h3></mat-card-header>
+    <mat-card-content>
+        <table mat-table [dataSource]="gridData" class="mat-elevation-z8 farm-table">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell [routerLink]="['details', element.id]" *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['name']"></tr>
+            <tr mat-row *matRowDef="let row; columns: ['name'];"></tr>
+        </table>
+    </mat-card-content>
+</mat-card>

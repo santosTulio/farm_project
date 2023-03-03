@@ -7,5 +7,33 @@ import { BasemapComponent } from './basemap/basemap.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  @ViewChild('map') map!: BasemapComponent
+
+  public sidebarLinks = [
+    {
+      path:'', 
+      isActive: false, 
+      label:'Pagina Inicial',
+      icon: 'home',
+      subSidebarLinks:[]
+    },
+    { 
+      isActive: false,
+      label: 'Cadastro',
+      icon: 'add',
+      subSidebarLinks:[
+        {
+          path:'create', 
+          isActive: false, 
+          label:'Novo Cadastro',
+          icon: 'add',
+        },
+        {
+          path:'draw', 
+          isActive: false, 
+          label:'Desenhar Circulo',
+          icon: 'draw',
+        }
+      ]
+    }
+  ]
 }
