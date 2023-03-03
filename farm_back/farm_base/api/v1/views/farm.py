@@ -1,5 +1,7 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 
+from farm_base.api.v1.filters import FarmFilter
 from farm_base.api.v1.serializers import FarmListSerializer, \
     FarmCreateSerializer, FarmDetailSerializer
 from farm_base.models import Farm
@@ -8,6 +10,8 @@ from farm_base.models import Farm
 class FarmListCreateView(generics.ListCreateAPIView):
     queryset = Farm.objects.filter(is_active=True)
     serializer_class = FarmListSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filterset_class = FarmFilter
 
     def get_serializer_class(self):
         if self.request.method == 'GET':
